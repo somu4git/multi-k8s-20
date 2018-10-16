@@ -14,7 +14,7 @@ after_success:
   - docker build -t somu4docker/multi-server ./server
   - docker build -t somu4docker/multi-worker ./worker
   # Login to docker CLI
-  - echo "DOCKER_PASSWORD"  | docker login -u "DOCKER_ID" --password-stdin
+  - echo "$DOCKER_PASSWORD"  | docker login -u "$DOCKER_ID" --password-stdin
   # take those images and push into docker hub
   - docker push somu4docker/multi-client
   - docker push somu4docker/multi-nginx
